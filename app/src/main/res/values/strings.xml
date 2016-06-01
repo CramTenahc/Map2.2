@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AutoNomos</string>
+    <string name="google_app_id">AIzaSyDU84ePuiKMTIs_65iuJeNA3-rIx_fAB6g</string>
+    <string name="string_transport">En Voiture </string>
+    <string name="title_activity_maps">Map</string>
+</resources>
