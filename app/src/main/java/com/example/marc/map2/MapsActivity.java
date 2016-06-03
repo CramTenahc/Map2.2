@@ -145,11 +145,17 @@ public class MapsActivity extends FragmentActivity {
      */
 
     public void onLocalisation(Location myLocation) {
-
-        LatLng myLatLng = new LatLng(myLocation.getLatitude(),myLocation.getLongitude());
-
-        Log.i("Location Latitude", String.valueOf(myLocation.getLatitude()));
-        Log.i("Location Longitude", String.valueOf(myLocation.getLongitude()));
+        LatLng myLatLng= new LatLng(44.3333,1.2167);
+        try {
+            myLatLng = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+            Log.i("Location Latitude", String.valueOf(myLocation.getLatitude()));
+            Log.i("Location Longitude", String.valueOf(myLocation.getLongitude()));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "Nous n'arrivons pas à vous localiser.\nVeuillez vérifier vos options de localisation et réessayer.", Toast.LENGTH_LONG).show();
+        }
 
         mMap.addMarker(new MarkerOptions().position(myLatLng).title("Votre position"));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLatLng, 15));
